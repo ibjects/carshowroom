@@ -10,9 +10,9 @@ import java.util.Optional;
 @Repository
 public interface CarRepository extends MongoRepository<Car, ObjectId> {
 
-    //Spring Data JPA uses a naming convention to generate queries based on the method name.
+    //Spring Data JPA uses the naming convention to generate queries based on the method name.
     // In this case, the method name starts with findBy, which tells Spring Data JPA to generate a query that finds entities by a specific property.
     // The rest of the method name (Origin in this case) is used to determine the property to search for.
-    Optional<List<Car>> findByOrigin(String origin); // Spring boot will understand what we're trying to do it's that much intelligent.
+    Optional<List<Car>> findByOrigin(String origin);
 
 }

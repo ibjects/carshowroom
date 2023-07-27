@@ -24,6 +24,11 @@ public class CarController {
         return new ResponseEntity<List<Car>>(carService.allCars(), HttpStatus.OK);
     }
 
+    @GetMapping("/getCar/{id}")
+    public ResponseEntity<Optional<Car>> getCarById(@PathVariable ObjectId id) {
+        return new ResponseEntity<Optional<Car>>(carService.carById(id), HttpStatus.OK);
+    }
+
     @GetMapping("/getCarsByOrigin/{origin}")
     public ResponseEntity<Optional<List<Car>>> getCarsByOrigin(@PathVariable String origin) {
         return new ResponseEntity<Optional<List<Car>>>(carService.carsByOrigin(origin), HttpStatus.OK);
